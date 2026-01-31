@@ -352,7 +352,6 @@ requireLogin();
       const logo = document.querySelector('.logo');
       if (logo) {
         logo.addEventListener('click', function(e) {
-          console.log('Logo clicked - redirecting to home page');
           window.location.href = 'index.php';
         });
 

@@ -313,7 +313,6 @@ requirePermission('add_product'); // Only users with add_product permission can 
     </script>
 
     <style>
-        /* Enhanced Checkbox Styles */
         .checkbox-options {
             background: #f8f9fa;
             border-radius: 10px;
@@ -412,17 +411,14 @@ requirePermission('add_product'); // Only users with add_product permission can 
             line-height: 1.4;
         }
 
-        /* Active state */
         .custom-checkbox input[type="checkbox"]:checked ~ .checkbox-content .checkbox-title {
             color: #3498db;
         }
 
-        /* Focus state */
         .custom-checkbox input[type="checkbox"]:focus + .checkmark {
             box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .checkbox-options {
                 padding: 15px;
@@ -446,7 +442,6 @@ requirePermission('add_product'); // Only users with add_product permission can 
             }
         }
 
-        /* Animation for better UX */
         .custom-checkbox {
             animation: fadeInUp 0.3s ease-out;
         }

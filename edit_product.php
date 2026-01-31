@@ -2,16 +2,7 @@
 session_start();
 include 'db.php';
 include 'functions.php';
-// requirePermission('edit_product'); // Only managers and admins can edit products
-
-// Disable error reporting for production (enable with ?debug=1)
-if (isset($_GET['debug'])) {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-} else {
-    error_reporting(0);
-    ini_set('display_errors', 0);
-}
+requirePermission('edit_product');
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     setFlashMessage('error', 'Invalid product ID.');
