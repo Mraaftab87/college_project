@@ -1,63 +1,85 @@
 # Smart Inventory System
 
-A comprehensive web-based inventory management system built with PHP, MySQL, and modern web technologies. This system provides role-based access control, product management, customer management, transaction tracking, and reporting capabilities.
+![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4?style=flat-square&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-## 🚀 Features
+A web-based inventory management system built with PHP and MySQL. Manage products, track inventory, handle customer data, and generate reports - all with role-based access control.
 
-### Core Functionality
-- **Product Management**: Add, edit, delete, and view products with detailed information
-- **Category Management**: Organize products with categories and subcategories
-- **Stock Management**: Track inventory levels with low stock alerts
-- **Customer Management**: Maintain customer database with contact information
-- **Transaction Tracking**: Record and monitor inventory transactions
-- **Barcode Support**: Generate and scan product barcodes
-- **Bulk Operations**: Import/export products via CSV files
+## Screenshots
 
-### Role-Based Access Control
-- **User Role**: View products and manage customers only
-- **Manager Role**: View products, customers, transactions, and reports
-- **Admin Role**: Full system access including user management
+> Screenshots coming soon
 
-### Advanced Features
-- **Search & Filter**: Advanced product search with multiple filters
-- **Reporting**: Comprehensive inventory reports and analytics
-- **Image Management**: Product image upload with thumbnail generation
-- **CSRF Protection**: Security measures against cross-site request forgery
-- **Responsive Design**: Mobile-friendly interface
+## Features
 
-## 🛠️ Technology Stack
+**Product Management**
+- Add, edit, and delete products
+- Organize with categories and subcategories
+- Track stock levels with low stock alerts
+- Upload product images with automatic thumbnails
+- SKU and barcode support
 
-- **Backend**: PHP 7.4+
-- **Database**: MySQL 5.7+
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Icons**: Font Awesome 6.5.0
-- **Server**: Apache/Nginx (XAMPP/WAMP compatible)
+**Customer Management**
+- Maintain customer database
+- Track customer types (Regular, Wholesale, VIP, Corporate)
+- View customer transaction history
+- Manage credit limits and GST numbers
 
-## 📋 Requirements
+**Transactions & Reports**
+- Record buy/sell transactions
+- Generate monthly sales and purchase reports
+- Calculate profit/loss
+- Export data to CSV
+- View transaction history
 
-- PHP 7.4 or higher
-- MySQL 5.7 or higher
-- Apache/Nginx web server
-- GD extension for image processing
-- mod_rewrite enabled (for clean URLs)
+**User Management**
+- Three user roles: Admin, Manager, User
+- Role-based permissions
+- Secure login with password recovery
+- Track user login activity
 
-## 🚀 Installation
+**Additional Features**
+- Barcode scanning
+- Bulk import/export via CSV
+- Advanced search and filtering
+- Responsive design for mobile
+- Security features (CSRF protection, SQL injection prevention)
 
-1. **Clone/Download** the project to your web server directory
-2. **Database Setup**:
-   - Create a MySQL database named `inventory`
-   - Import `database.sql` to create tables and sample data
-3. **Configuration**:
-   - Update `db.php` with your database credentials
-   - Ensure proper file permissions (755 for directories, 644 for files)
-4. **Access** the system via web browser
+## Tech Stack
 
-### Default Login Credentials
-- **Admin**: username: `admin`, password: `admin123`
-- **Manager**: username: `manager`, password: `manager123`
-- **User**: username: `user`, password: `user123`
+- PHP 7.4+
+- MySQL 5.7+
+- HTML5, CSS3, JavaScript
+- Apache with mod_rewrite
+- Font Awesome icons
 
-## 📁 Project Structure
+## Requirements
+
+- PHP 7.4+
+- MySQL 5.7+
+- Apache/Nginx
+- GD extension (for image processing)
+- mod_rewrite enabled
+
+## Installation
+
+1. Clone or download this repository
+2. Create a MySQL database named `inventory`
+3. Import `database.sql` into your database
+4. Copy `db.example.php` to `db.php` and update with your database credentials
+5. Make sure `images/` directory is writable
+6. Access via browser: `http://localhost/smart-inventory-system/`
+
+**Default Login:**
+- Admin: `admin` / `admin123`
+- Manager: `manager` / `manager123`
+- User: `user` / `user123`
+
+Change these passwords after first login!
+
+See [SETUP.md](SETUP.md) for detailed instructions.
+
+## Project Structure
 
 ```
 inventory_system/
@@ -99,110 +121,87 @@ inventory_system/
     └── get_type_item_category.php # Category data API
 ```
 
-## 🔐 Security Features
+## Security
 
-- **Session Management**: Secure user sessions with timeout
-- **CSRF Protection**: Cross-site request forgery prevention
-- **SQL Injection Prevention**: Prepared statements throughout
-- **XSS Protection**: Output sanitization
-- **File Upload Security**: Validated file uploads with type checking
-- **Role-Based Permissions**: Granular access control
-- **Password Hashing**: Secure password storage
+- Password hashing with bcrypt
+- Prepared statements for SQL queries
+- CSRF token protection
+- XSS prevention through output sanitization
+- Secure session management
+- File upload validation
+- Role-based access control
 
-## 🎨 User Interface
+## User Interface
 
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **Modern UI**: Clean, intuitive interface with Font Awesome icons
-- **Color-Coded Status**: Visual indicators for stock levels
-- **Search & Filter**: Advanced filtering capabilities
-- **Pagination**: Efficient data display for large datasets
+The system features a clean, responsive design that works on desktop, tablet, and mobile devices. Stock levels are color-coded for quick identification, and the interface includes advanced search and filtering options.
 
-## 📊 Key Features by Role
+## User Roles
 
-### User Role
-- View product catalog
-- Search and filter products
-- Manage customer information
-- View basic dashboard
+**User**
+- View products
+- Manage customers
+- Basic dashboard access
 
-### Manager Role
-- All User permissions
-- View transaction history
-- Access detailed reports
-- Monitor inventory analytics
+**Manager**
+- Everything User can do
+- View transactions
+- Access reports
+- Add transactions
 
-### Admin Role
-- All Manager permissions
+**Admin**
+- Everything Manager can do
 - Add/edit/delete products
-- Manage user accounts
-- System configuration
-- Full administrative access
+- Manage users
+- Full system access
 
-## 🔧 Configuration
+## Configuration
 
-### Database Configuration (`db.php`)
+Edit `db.php` with your database credentials:
 ```php
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'inventory';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "inventory";
 ```
 
-### File Permissions
-- Directories: 755
-- Files: 644
-- Images directory: 755
+Make sure the `images/` directory has write permissions.
 
-## 📈 Performance Features
+## Troubleshooting
 
-- **Image Optimization**: Automatic thumbnail generation
-- **Lazy Loading**: Images load as needed
-- **Database Indexing**: Optimized queries
-- **Caching**: Session-based caching
-- **Compression**: CSS/JS minification ready
+**Database connection error?** Check your credentials in `db.php`
 
-## 🐛 Troubleshooting
+**Image upload not working?** Verify GD extension is installed and `images/` directory is writable
 
-### Common Issues
-1. **Database Connection Error**: Check credentials in `db.php`
-2. **Image Upload Fails**: Verify GD extension and directory permissions
-3. **Permission Denied**: Ensure proper file permissions
-4. **Session Issues**: Check PHP session configuration
+**Session issues?** Check PHP session configuration in php.ini
 
-### Debug Mode
-Enable error reporting in development:
-```php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-```
+## Contributing
 
-## 🤝 Contributing
+Found a bug or want to add a feature? Contributions are welcome!
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+1. Fork the repo
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
 
-## 📞 Support
+## Author
 
-For support or questions:
-- Check the troubleshooting section
-- Review the code comments
-- Ensure all requirements are met
+Update this section with your information:
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: your.email@example.com
 
-## 🎯 Project Goals
+## Future Plans
 
-- Provide a complete inventory management solution
-- Implement secure, role-based access control
-- Create an intuitive, responsive user interface
-- Support bulk operations for efficiency
-- Generate comprehensive reports and analytics
+- REST API
+- Email notifications
+- PDF reports
+- Multi-warehouse support
+- Advanced analytics
 
 ---
 
-**Smart Inventory System** - Streamlining inventory management with modern web technologies. 
+Built as a learning project to demonstrate PHP, MySQL, and web development skills. 

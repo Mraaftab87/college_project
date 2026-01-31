@@ -1,0 +1,192 @@
+# PHP Inventory System - .gitignore
+
+# ===========================
+# Environment & Configuration
+# ===========================
+# Database configuration (sensitive)
+db.php
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# ===========================
+# User Uploaded Files
+# ===========================
+# Product images (uploaded by users)
+images/products/*.jpg
+images/products/*.jpeg
+images/products/*.png
+images/products/*.gif
+images/products/*.webp
+images/products/thumbs/*.jpg
+images/products/thumbs/*.jpeg
+images/products/thumbs/*.png
+
+# Keep the directory structure
+!images/products/.gitkeep
+!images/products/thumbs/.gitkeep
+
+# ===========================
+# IDE & Editor Files
+# ===========================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PhpStorm / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+
+# Eclipse
+.buildpath
+.project
+.settings/
+
+# Atom
+.atom/
+
+# ===========================
+# Operating System Files
+# ===========================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# ===========================
+# Temporary & Cache Files
+# ===========================
+# PHP
+*.cache
+*.tmp
+*.temp
+*.log
+
+# Session files
+sessions/
+tmp/
+temp/
+
+# Composer
+vendor/
+composer.lock
+composer.phar
+
+# Node modules (if using any frontend tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# ===========================
+# Backup & Archive Files
+# ===========================
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*.swo
+*~
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Database backups
+*.sql.gz
+*.sql.zip
+backup/
+backups/
+
+# ===========================
+# Security & Sensitive Data
+# ===========================
+# Private keys
+*.pem
+*.key
+*.crt
+*.p12
+
+# Configuration backups
+config.backup.php
+db.backup.php
+
+# ===========================
+# Build & Deployment
+# ===========================
+# Build directories
+build/
+dist/
+
+# Deployment scripts (if they contain sensitive info)
+deploy.sh
+deploy.bat
+
+# ===========================
+# Testing & Development
+# ===========================
+# Test files
+test.php
+debug.php
+phpunit.xml
+.phpunit.result.cache
+
+# Coverage reports
+coverage/
+.coverage
+
+# ===========================
+# Version Control
+# ===========================
+# Git
+.git/
+.gitattributes
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+.hgignore
+
+# ===========================
+# Documentation (optional)
+# ===========================
+# Uncomment if you don't want to track docs
+# docs/
+# documentation/
+
+# ===========================
+# Custom Project Files
+# ===========================
+# Add any project-specific files here
+check_images.php
+test_*.php
